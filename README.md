@@ -1,11 +1,11 @@
-ECサイト v1.0
-
+#ECサイト v1.0
+---
+React + Tailwind CSS + FastAPI + SQLite によるシンプルな EC サイトです。
+---
+フロントエンドは AWS S3 に、バックエンドは EC2 にデプロイしています。
 24時間アクセス可能：
 http://ecsite-frontend.s3-website-ap-northeast-1.amazonaws.com/
-
-React + Tailwind CSS + FastAPI + SQLite によるシンプルな EC サイトです。
-フロントエンドは AWS S3 に、バックエンドは EC2 にデプロイしています。
-
+---
 🔐 ログイン機能
 Customer と Merchant でログイン分離
 
