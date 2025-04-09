@@ -1,7 +1,7 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API_BASE_URL = "http://13.113.236.36:8000";
+const API_BASE_URL = "http://13.230.72.70:8000";
 
 // 获取商品列表，返回的商品对象包含 id, name, price, category, stock, addedBy 等字段
 export const getProducts = () => {
