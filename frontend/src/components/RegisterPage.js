@@ -8,7 +8,7 @@ function RegisterPage({ onRegister }) {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('customer');
   const navigate = useNavigate();
-  const API_BASE_URL = "http://13.113.236.36:8000";
+  const API_BASE_URL = "/api";
 
 
   const handleSubmit = (e) => {

@@ -9,7 +9,7 @@ function LoginPage({ onLogin }) {
   const [role, setRole] = useState('customer');
   const [errorMsg, setErrorMsg] = useState(''); // ← For showing error message
   const navigate = useNavigate();
-  const API_BASE_URL = "http://13.230.72.70:8000";
+  const API_BASE_URL = "/api";
 
 
   const handleSubmit = (e) => {

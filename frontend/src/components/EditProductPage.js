@@ -11,7 +11,7 @@ export default function EditProductPage({ user }) {
   });
   const { id } = useParams();
   const navigate = useNavigate();
-  const API_BASE_URL = "http://13.113.236.36:8000";
+  const API_BASE_URL = "/api";
 
 
   useEffect(() => {

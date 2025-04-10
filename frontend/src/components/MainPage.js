@@ -7,7 +7,7 @@ import ShoppingCartDrawer from './ShoppingCartDrawer';
 function MainPage({ user, searchKeyword, setSearchKeyword }) {
   const [products, setProducts] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
-  const API_BASE_URL = "http://13.113.236.36:8000";
+  const API_BASE_URL = "/api";
 
   const navigate = useNavigate();
 

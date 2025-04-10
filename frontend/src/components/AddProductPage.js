@@ -11,7 +11,7 @@ export default function AddProductPage({ user }) {
   const [description, setDescription] = useState('');
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
-  const API_BASE_URL = "http://13.113.236.36:8000";
+  const API_BASE_URL = "/api";
 
 
   const handleSubmit = async (e) => {

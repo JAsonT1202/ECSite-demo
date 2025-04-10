@@ -6,7 +6,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function ShoppingCartDrawer({ username, open, setOpen }) {
   const [cart, setCart] = useState([])
-  const API_BASE_URL = "http://13.113.236.36:8000";
+  const API_BASE_URL = "/api";
 
 
   // 每次抽屉打开时，加载购物车

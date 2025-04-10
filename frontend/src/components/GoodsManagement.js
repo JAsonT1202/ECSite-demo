@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function GoodsManagement({ user }) {
   const [products, setProducts] = useState([]);
-  const API_BASE_URL = "http://13.113.236.36:8000";
+  const API_BASE_URL = "/api";
 
   const navigate = useNavigate();
 
