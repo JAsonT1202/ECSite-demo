@@ -4,7 +4,7 @@ React + Tailwind CSS + FastAPI + SQLite によるシンプルな EC サイトで
 
 フロントエンドは AWS S3 に、バックエンドは EC2 にデプロイしていますので、  
 24時間アクセス可能です：  
-[http://ecsite-frontend.s3-website-ap-northeast-1.amazonaws.com/](http://13.230.72.70/)
+[http://ecsite-frontend.s3-website-ap-northeast-1.amazonaws.com/] (http://13.230.72.70/)
 
 ---
 
