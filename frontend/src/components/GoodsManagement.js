@@ -52,7 +52,7 @@ function GoodsManagement({ user }) {
               <div key={product.id} className="bg-gray-50 border rounded-lg shadow-sm p-4 flex flex-col">
                 {product.imageUrl && (
                   <img
-                    src={`http://13.113.236.36:8000/${product.imageUrl}`}
+                    src={`/api/${product.imageUrl}`}
                     alt={product.name}
                     className="w-full h-48 object-cover rounded-md mb-4"
                   />

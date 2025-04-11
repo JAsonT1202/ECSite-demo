@@ -67,7 +67,7 @@ function MainPage({ user, searchKeyword, setSearchKeyword }) {
               {/* Product Image or PDF */}
               {product.imageUrl && product.imageUrl.endsWith('.pdf') ? (
                 <a
-                  href={`http://13.113.236.36:8000/${product.imageUrl}`}
+                  href={`/api/${product.imageUrl}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-blue-600 underline text-center py-10"
@@ -77,7 +77,7 @@ function MainPage({ user, searchKeyword, setSearchKeyword }) {
               ) : (
                 <img
                   alt={product.name}
-                  src={`http://13.113.236.36:8000/${product.imageUrl}`}
+                  src={`api/${product.imageUrl}`}
                   className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75"
                 />
               )}
