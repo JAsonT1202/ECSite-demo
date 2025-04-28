@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ShoppingCartDrawer from './ShoppingCartDrawer';
+import { API_BASE_URL } from '../services/api'
 
 function MainPage({ user, searchKeyword, setSearchKeyword }) {
   const [products, setProducts] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
-  const API_BASE_URL = "http://13.230.72.70/api";
 
   const navigate = useNavigate();
 
@@ -67,7 +67,7 @@ function MainPage({ user, searchKeyword, setSearchKeyword }) {
               {/* Product Image or PDF */}
               {product.imageUrl && product.imageUrl.endsWith('.pdf') ? (
                 <a
-                  href={`http://13.230.72.70/api/${product.imageUrl}`}
+                  href={product.imageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-blue-600 underline text-center py-10"
@@ -77,7 +77,7 @@ function MainPage({ user, searchKeyword, setSearchKeyword }) {
               ) : (
                 <img
                   alt={product.name}
-                  src={`http://13.230.72.70/api/${product.imageUrl}`}
+                  src={product.imageUrl}
                   className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75"
                 />
               )}

@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { API_BASE_URL } from '../services/api';
 
 function RegisterPage({ onRegister }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('customer');
   const navigate = useNavigate();
-  const API_BASE_URL = "http://13.230.72.70/api/";
 
 
   const handleSubmit = (e) => {

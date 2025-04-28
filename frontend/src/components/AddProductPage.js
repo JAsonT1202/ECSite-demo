@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../services/api';
 
 export default function AddProductPage({ user }) {
   const [name, setName] = useState('');
@@ -11,7 +12,6 @@ export default function AddProductPage({ user }) {
   const [description, setDescription] = useState('');
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
-  const API_BASE_URL = "http://13.230.72.70/api/";
 
 
   const handleSubmit = async (e) => {
