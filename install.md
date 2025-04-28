@@ -1,5 +1,6 @@
 ## 前端部署
-
+- 进入前端项目目录
+``` cd frontend ```
 - 安装依赖
 ``` npm install ```
 - 打包项目
@@ -10,6 +11,8 @@
 ``` nginx -s reload ```
 
 ## 后端部署
+- 进入后端项目目录
+``` cd backend ```
 - 安装依赖
 ``` pip install -r requirements.txt ```
 - 切换conda环境（需安装conda）
