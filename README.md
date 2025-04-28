@@ -4,8 +4,8 @@ React + Tailwind CSS + FastAPI + Nginx + SQLite によるシンプルな EC サ�
 
 Amazon EC2 にデプロイしていますので、  
 24時間アクセス可能です： 
-http://13.230.72.70/
-
+http://13.230.72.70/[
+](http://18.183.201.210:8080/)
 ---
 
 🔐 **ログイン機能**  
