@@ -1,21 +1,21 @@
-## 前端部署
-- 进入前端项目目录
+## Frontend
+- Navigate to the frontend project directory
 ``` cd frontend ```
-- 安装依赖
+- Install dependencies
 ``` npm install ```
-- 打包项目
+- Build the project
 ``` npm run build ```
-- 拷贝nginx配置文件
+- Copy the nginx configuration file
 ``` cp demo.conf /etc/nginx/conf.d/demo.conf ```
-- 加载nginx配置
+- Reload the nginx configuration
 ``` nginx -s reload ```
 
-## 后端部署
-- 进入后端项目目录
+## Backend
+- Navigate to the backend project directory
 ``` cd backend ```
-- 安装依赖
+- Install dependencies
 ``` pip install -r requirements.txt ```
-- 切换conda环境（需安装conda）
+- Activate the conda environment
 ``` conda activate demo ```
-- 启动后端服务
+- Start the backend service
 ```bash start.sh```
