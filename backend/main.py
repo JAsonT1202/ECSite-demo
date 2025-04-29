@@ -10,8 +10,10 @@ from fastapi.staticfiles import StaticFiles
 from typing import List
 import os
 from uuid import uuid4
-import bcrypt  # ✅ 必须添加这一行
+import bcrypt 
+import stripe
 
+stripe.api_key = "sk_test_51RJ45a0694x7JnSXVgSts8gfHqOOoh1yx6zxlTcDlyaDtX6zUH2KZXXCsUkgYxWPc7PaVjFKGubtUrhwGCVO43MM00o3YE8qf4"
 # -----------------------
 # 初始化与静态文件服务
 # -----------------------
@@ -203,3 +205,41 @@ def place_order(order: schemas.OrderCreate, db: Session = Depends(get_db)):
             for item in order_items
         ]
     )
+
+# -----------------------
+# Stripe Checkout 支付接口
+# -----------------------
+
+@app.post("/create-checkout-session")
+def create_checkout_session(
+    order: schemas.OrderCreate,
+    base_url: str = Body(...), 
+    db: Session = Depends(get_db)
+):
+    line_items = []
+    for item in order.items:
+        product = db.query(models.ProductModel).filter(models.ProductModel.id == item.productId).first()
+        if not product:
+            raise HTTPException(status_code=404, detail=f"{item.productId} is not exist")
+        line_items.append({
+            'price_data': {
+                'currency': 'jpy',
+                'product_data': {
+                    'name': product.name,
+                },
+                'unit_amount': int(product.price * 100),
+            },
+            'quantity': item.quantity,
+        })
+
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'], 
+        line_items=line_items,
+        mode='payment',
+        success_url=f"{base_url}/success",  
+        cancel_url=f"{base_url}/cancel",    
+    )
+
+    return {"checkout_url": session.url}
+
+

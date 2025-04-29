@@ -26,7 +26,7 @@ export default function ShoppingCartDrawer({ username, open, setOpen }) {
       .catch(err => alert(err.response?.data?.detail || "Failed to delete item"));
   };
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (cart.length === 0) {
       alert("Cart is empty.");
       return;
@@ -35,12 +35,17 @@ export default function ShoppingCartDrawer({ username, open, setOpen }) {
       productId: item.productId,
       quantity: item.quantity
     }));
-    axios.post(`${API_BASE_URL}/orders`, { username, items })
-      .then(() => {
-        alert("Order placed successfully!");
-        loadCart();
-      })
-      .catch(err => alert(err.response?.data?.detail || "Failed to place order"));
+    
+    try {
+      const res = await axios.post(`${API_BASE_URL}/create-checkout-session`, {
+        username,
+        items,
+        base_url: window.location.origin  // ✅ 告诉后端当前访问地址（带域名/端口）
+      });
+      window.location.href = res.data.checkout_url;  // ✅ 跳转到 Stripe 支付页
+    } catch (err) {
+      alert(err.response?.data?.detail || "Failed to initiate checkout");
+    }
   };
 
   const subtotal = cart.reduce((sum, item) => {
